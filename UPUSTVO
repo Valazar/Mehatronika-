@@ -1,0 +1,40 @@
+Preuzeti u home direktorijum
+Uci u folder MEHATRONIKA, zatim u project_ws i obrisati sve sem src
+desni klik -> open in terminal (tako smo otvorili prvi terminal)
+U PRVOM TERMINALU:
+	roscore
+	ctrl+shift+t da se predje u sledeci terminal
+U DRUGOM TERMINALU:
+	export WEBOTS_HOME=/usr/local/webots/ (nakon izlaska iz terminala mora opet da se pozove)
+	cd ~/MEHATRONIKA/project_ws/src/
+	---- naredne tri komande se moraju ponovo ukucati nakon svake izmene u kodu ili world-u, ali pre toga ctrl+c
+	catkin build
+	source ~/MEHATRONIKA/project_ws/devel/setup.bash
+	roslaunch webots_ros webots_ros_python.launch
+	(otvorio se webots, ako nije pravi svet, nadji ga u OPEN WORLDS opciji)
+	ctrl+shift+t da se predje u sledeci terminal
+U TRECEM TERMINALU:
+	cd ~/MEHATRONIKA/project_ws/src/camera_filter/src/camera_filter/nodes/
+	chmod +x node.py (samo jednom treba kad se preuzme folder, jer je to dodela dozvole za izvrsavanje od linuksa)
+	./node.py
+	ctrl+shift+t da se predje u sledeci terminal
+U CETVRTOM TERMINALU:
+	cd ~/MEHATRONIKA/project_ws/src/webots_ros/controllers/
+	chmod +x path_finder.py  (samo jednom treba kad se preuzme folder, jer je to dodela dozvole za izvrsavanje od linuksa)
+	./path_finder.py 
+
+
+
+
+
+
+
+Svaki put kad treba ispocetka pokrenuti program ili nakon izmeneu kodu:
+Drugi terminal: ctrl+c da se prekine proces, strelicom na gore prolaziti kroz istoriju komandi 
+	catkin build
+	source ~/MEHATRONIKA/project_ws/devel/setup.bash
+	roslaunch webots_ros webots_ros_python.launch
+Treci terminal: ctrl+c da se prekine proces, strelicom na gore prolaziti kroz istoriju komandi 
+	./node.py
+Cetvrti terminal:
+	./path_finder.py 
